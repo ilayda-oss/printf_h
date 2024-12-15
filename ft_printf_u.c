@@ -3,37 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suozkara <suozkara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sudeilaydaozkara <sudeilaydaozkara@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:30:12 by suozkara          #+#    #+#             */
-/*   Updated: 2024/11/23 17:21:51 by suozkara         ###   ########.fr       */
+/*   Updated: 2024/12/15 20:49:00 by sudeilaydao      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (!s)
-        return(write(1, "(null)", 6));
-    while (s[i])
-    {
-        ft_putchar(s[i]);
-        i++;   
-    }
-    return (i);
+	i = 0;
+	if (!s)
+		return (write(1, "(null)", 6));
+	while (s[i])
+	{
+		ft_putchar(s[i]);
+		i++;
+	}
+	return (i);
 }
 
 int	ft_putnbr(int n)
 {
 	long	a;
-    int ct;
+	int		ct;
 
 	a = n;
-    ct = 0;
+	ct = 0;
 	if (a < 0)
 	{
 		a *= -1;
@@ -44,47 +44,47 @@ int	ft_putnbr(int n)
 		ct += ft_putnbr(a / 10);
 	}
 	ct += write(1, &"0123456789"[a % 10], 1);
-    return(ct);
+	return (ct);
 }
 
-int ft_putuns(unsigned int n)
+int	ft_putuns(unsigned int n)
 {
-    int ct;
+	int	ct;
 
-    ct = 0;
-    if (n >= 10)
+	ct = 0;
+	if (n >= 10)
 	{
 		ct += ft_putnbr(n / 10);
 	}
 	ct += write(1, &"0123456789"[n % 10], 1);
-    return (ct);
+	return (ct);
 }
 
-int ft_puthex(unsigned long n, char c)
+int	ft_puthex(unsigned long n, char c)
 {
-    int ct;
+	int	ct;
 
-    ct = 0;
-    if (n >= 16)
-        ct += ft_puthex(n / 16, c);
-    if (c == 'x')
-        ct += ft_putchar("0123456789abcdef"[n % 16]);
-    else if (c == 'X')
-        ct += ft_putchar("0123456789ABCDEF"[n % 16]);
-    return (ct);
+	ct = 0;
+	if (n >= 16)
+		ct += ft_puthex(n / 16, c);
+	if (c == 'x')
+		ct += ft_putchar("0123456789abcdef"[n % 16]);
+	else if (c == 'X')
+		ct += ft_putchar("0123456789ABCDEF"[n % 16]);
+	return (ct);
 }
-int ft_putptr(unsigned long n)
+
+int	ft_putptr(unsigned long n)
 {
-    int ct;
+	int	ct;
 
-    if (n == 0)
-    {
-        ft_putstr("(nil)");
-        return (5);
-    }
-
-    ct = 0;
-    ct += ft_putstr("0x");
-    ct += ft_puthex(n, 'x');
+	if (n == 0)
+	{
+		ft_putstr("(nil)");
+		return (5);
+	}
+	ct = 0;
+	ct += ft_putstr("0x");
+	ct += ft_puthex(n, 'x');
 	return (ct);
 }

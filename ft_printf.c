@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suozkara <suozkara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sudeilaydaozkara <sudeilaydaozkara@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:23:29 by suozkara          #+#    #+#             */
-/*   Updated: 2024/12/11 19:47:12 by suozkara         ###   ########.fr       */
+/*   Updated: 2024/12/15 20:50:57 by sudeilaydao      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int checks(char c)
+int	checks(char c)
 {
-    if (c == 'c' ||c == 's' ||c == 'p' ||c == 'd' ||c == 'i' 
-        ||c == 'u' ||c == 'x' ||c == 'X' ||c == '%')
-        return(1);
-    return(0);
-        
+	if (c == 'c' || c == 's' || c == 'p' || c == 'd'
+		|| c == 'i' || c == 'u' || c == 'x' || c == 'X' || c == '%')
+		return (1);
+	return (0);
 }
-int checkar(char c, va_list a)
+
+int	checkar(char c, va_list a)
 {
-    if (c == '%')
+	if (c == '%')
 		return (ft_putchar('%'));
 	else if (c == 'c')
 		return (ft_putchar(va_arg(a, int)));
@@ -40,50 +40,29 @@ int checkar(char c, va_list a)
 		return (0);
 }
 
-
-
-
-int ft_printf(const char *s, ...)
+int	ft_printf(const char *s, ...)
 {
-    int i;
-    int size;
-    va_list a;
-    
-    size = 0;
-    i = 0;
-    va_start(a, s);
-    while(s[i])
-    {
-        if (s[i] == '%')
-        {
-            if (checks(s[i + 1]))
-            {
-                size += checkar(s[i + 1], a);
-                i++;
-            }
-        }
-        else
-            size += ft_putchar(s[i]);
-        i++;
-    }
-    va_end(a);
-    return (size);    
+	int		i;
+	int		size;
+	va_list	a;
+
+	size = 0;
+	i = 0;
+	va_start(a, s);
+	while (s[i])
+	{
+		if (s[i] == '%')
+		{
+			if (checks(s[i + 1]))
+			{
+				size += checkar(s[i + 1], a);
+				i++;
+			}
+		}
+		else
+			size += ft_putchar(s[i]);
+		i++;
+	}
+	va_end(a);
+	return (size);
 }
-
-#include <stdio.h>
-
-int main()
-{
-    char *p = NULL;
-    
-
-
-    ft_printf("%p\n", p);
-
-    printf("%p\n", p);
-
-    
-}
-
-
-
