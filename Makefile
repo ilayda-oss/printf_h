@@ -1,4 +1,4 @@
- NAME = libftprintf.a
+NAME = libftprintf.a
 
 SRCS = ft_printf_u.c ft_putchar.c ft_printf.c
 
@@ -13,7 +13,7 @@ $(NAME): $(OBJS)
 
 all: $(NAME)
 
-src/%.o: src/%.c
+%.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sudeilaydaozkara <sudeilaydaozkara@stud    +#+  +:+       +#+        */
+/*   By: suozkara <suozkara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:23:29 by suozkara          #+#    #+#             */
-/*   Updated: 2024/12/15 20:50:57 by sudeilaydao      ###   ########.fr       */
+/*   Updated: 2024/12/16 15:32:04 by suozkara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,10 @@ int	ft_printf(const char *s, ...)
 	va_start(a, s);
 	while (s[i])
 	{
-		if (s[i] == '%')
+		if (s[i] == '%' && checks(s[i + 1]))
 		{
-			if (checks(s[i + 1]))
-			{
-				size += checkar(s[i + 1], a);
-				i++;
-			}
+			size += checkar(s[i + 1], a);
+			i++;
 		}
 		else
 			size += ft_putchar(s[i]);
