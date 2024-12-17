@@ -6,7 +6,7 @@
 /*   By: suozkara <suozkara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:23:29 by suozkara          #+#    #+#             */
-/*   Updated: 2024/12/17 17:35:13 by suozkara         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:37:55 by suozkara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	checkar(char c, va_list a)
 	else if (c == 'u')
 		return (ft_putuns(va_arg(a, unsigned int)));
 	else if (c == 'x' || c == 'X')
-		return (ft_puthex(va_arg(a, unsigned long), c));
+		return (ft_puthex(va_arg(a, unsigned int), c));
 	else if (c == 'p')
 		return (ft_putptr(va_arg(a, unsigned long)));
 	else
