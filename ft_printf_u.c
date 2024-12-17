@@ -6,7 +6,7 @@
 /*   By: suozkara <suozkara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:30:12 by suozkara          #+#    #+#             */
-/*   Updated: 2024/12/17 16:50:49 by suozkara         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:22:15 by suozkara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,13 @@ int	ft_putuns(unsigned int n)
 	ct = 0;
 	if (n >= 10)
 	{
-		ct += ft_putnbr(n / 10);
+		ct += ft_putuns(n / 10);
 	}
 	ct += write(1, &"0123456789"[n % 10], 1);
 	return (ct);
 }
 
-int	ft_puthex(unsigned long n, char c)
+int	ft_puthex(unsigned int n, char c)
 {
 	int	ct;
 
