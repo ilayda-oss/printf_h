@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sudeilaydaozkara <sudeilaydaozkara@stud    +#+  +:+       +#+        */
+/*   By: suozkara <suozkara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:30:12 by suozkara          #+#    #+#             */
-/*   Updated: 2024/12/15 20:49:00 by sudeilaydao      ###   ########.fr       */
+/*   Updated: 2024/12/17 16:50:49 by suozkara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
