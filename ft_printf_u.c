@@ -6,7 +6,7 @@
 /*   By: suozkara <suozkara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:30:12 by suozkara          #+#    #+#             */
-/*   Updated: 2024/12/17 17:35:07 by suozkara         ###   ########.fr       */
+/*   Updated: 2024/12/17 18:19:14 by suozkara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	ft_putuns(unsigned int n)
 	return (ct);
 }
 
-int	ft_puthex(unsigned long n, char c)
+int	ft_puthex(unsigned int n, char c)
 {
 	int	ct;
 
@@ -74,7 +74,7 @@ int	ft_puthex(unsigned long n, char c)
 	return (ct);
 }
 
-int	ft_putptr(unsigned long n)
+int	ft_putptr(unsigned long n, int f)
 {
 	int	ct;
 
@@ -84,7 +84,10 @@ int	ft_putptr(unsigned long n)
 		return (5);
 	}
 	ct = 0;
-	ct += ft_putstr("0x");
-	ct += ft_puthex(n, 'x');
+	if (f == 1)
+		ct += ft_putstr("0x");
+	if (n >= 16)
+		ct += ft_putptr(n / 16, 0);
+	ct += ft_putchar("0123456789abcdef"[n % 16]);
 	return (ct);
 }
