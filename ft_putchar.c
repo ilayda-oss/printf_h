@@ -6,7 +6,7 @@
 /*   By: sudeilaydaozkara <sudeilaydaozkara@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:30:51 by suozkara          #+#    #+#             */
-/*   Updated: 2024/12/15 20:50:12 by sudeilaydao      ###   ########.fr       */
+/*   Updated: 2025/01/01 14:55:49 by sudeilaydao      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return (1);
+	return(1);
 }

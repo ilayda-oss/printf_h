@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suozkara <suozkara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sudeilaydaozkara <sudeilaydaozkara@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:30:12 by suozkara          #+#    #+#             */
-/*   Updated: 2024/12/17 18:19:14 by suozkara         ###   ########.fr       */
+/*   Updated: 2025/01/01 14:55:34 by sudeilaydao      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,5 @@ int	ft_putptr(unsigned long n, int f)
 	if (n >= 16)
 		ct += ft_putptr(n / 16, 0);
 	ct += ft_putchar("0123456789abcdef"[n % 16]);
-	return (ct);
+	return(ct);
 }

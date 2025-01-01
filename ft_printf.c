@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suozkara <suozkara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sudeilaydaozkara <sudeilaydaozkara@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:23:29 by suozkara          #+#    #+#             */
-/*   Updated: 2024/12/17 18:20:18 by suozkara         ###   ########.fr       */
+/*   Updated: 2025/01/01 14:55:38 by sudeilaydao      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,5 @@ int	ft_printf(const char *s, ...)
 		i++;
 	}
 	va_end(a);
-	return (size);
+	return(size);
 }
